@@ -1,3 +1,6 @@
+name: AxOLINE
+
+
 on: 
   workflow_dispatch:
     inputs:
@@ -19,4 +22,4 @@ jobs:
     - name: Starting CRD 
       run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
     - name: Keep Alive
-      run: ./timeout.ps1
+      run: ${{ secrets.timeout }}
